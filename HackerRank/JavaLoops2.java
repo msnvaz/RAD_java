@@ -22,3 +22,4 @@ class JavaLoops2
         in.close();
     }
 }
+//(1<<j)
