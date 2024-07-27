@@ -13,18 +13,21 @@ public class FabEvenSum {
             int num2=2;
             int fib=0;
             int sum=2;
-            N= scan.nextInt();
+            N= scan.nextInt();//max number
             System.out.print(num1+ " "+num2);
 
             while(true){
                 fib=num1+num2;
-                if(fib%2==0){
-                    sum=sum+fib;
-                }
+                
                 
                 if(fib>N){
                     break;
                 }
+
+                if(fib%2==0){
+                    sum=sum+fib;
+                }
+                
                 System.out.print(" "+fib);
                 num1=num2;
                 num2=fib;
