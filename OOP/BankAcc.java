@@ -48,14 +48,13 @@ public double getAccBal(){
     }
 
     //methods
-    public boolean deposit(double amount){
+    public void deposit(double amount){
         if(amount>0){
             accBalance+=amount;
-            return true;
 
         }else{
             System.out.println("Transaction unsuccessful : Invalid Amount ");
-            return false;
+            
         }
     }
     
