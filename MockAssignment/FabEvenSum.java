@@ -14,7 +14,7 @@ public class FabEvenSum {
             int fib=0;
             int sum=2;
             N= scan.nextInt();//max number
-            System.out.print(num1+ " "+num2);
+            //System.out.print(num1+ " "+num2);
 
             while(true){
                 fib=num1+num2;
@@ -28,12 +28,12 @@ public class FabEvenSum {
                     sum=sum+fib;
                 }
                 
-                System.out.print(" "+fib);
+                //System.out.print(" "+fib);
                 num1=num2;
                 num2=fib;
                 
             }
-            System.out.println();
+            //System.out.println();
             System.out.println(sum);
             //System.out.println();
             

@@ -10,6 +10,13 @@ class BankAcc{
         this.accNo = accNoIn;
         this.accBalance=accBalanceIn;
     }
+
+    public BankAcc(String accNameIn,String accNoIn){
+        this.accName= accNameIn;
+        this.accNo = accNoIn;
+        this.accBalance=0;
+    }
+
     //setters
     public void setaccDetails(String AccHolderNameIn){
         if(AccHolderNameIn.length()>5){

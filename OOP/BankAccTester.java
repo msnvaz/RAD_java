@@ -27,6 +27,7 @@ public class BankAccTester {
 
 //dont use index method as we need to keep track of indexes as well
 //instead use trverse methods like a search
+//for loop was used to check if the values are clearly assigned
 
         for(int i=0;i<accounts.size();i++){
             System.out.println("Account Name : "+ accounts.get(i).getAccHolderName());
