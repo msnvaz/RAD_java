@@ -76,4 +76,15 @@ public class Bank {
         return false; //transfer unsuccessful
     }
 
+    //add goldAccount
+    public boolean addGoldAccount(String bankAccountNumberIn,String AccountHolderNameIn,double ODLimitIn){
+        if (search(bankAccountNumberIn)==-999){
+            GoldAccount account =new GoldAccount( bankAccountNumberIn, AccountHolderNameIn,ODLimitIn);
+            BankAccsList.add(account);
+            return true;
+        }
+        return false;
+        
+    }
+
 }

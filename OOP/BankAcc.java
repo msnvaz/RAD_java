@@ -1,4 +1,4 @@
-class BankAcc{
+public class BankAcc{
     //attributes
     private String accName;
     private String accNo;
@@ -38,6 +38,10 @@ public String getAccNumber(){
 
 public double getAccBal(){
     return this.accBalance;
+}
+
+public void setAccBal(double NewAccBal){
+    this.accBalance=NewAccBal;
 }
 
     //same constructor with diiferebt signature(method overloading)

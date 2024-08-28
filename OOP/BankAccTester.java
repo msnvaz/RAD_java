@@ -24,6 +24,9 @@ public class BankAccTester {
         
         accounts.add(0,new BankAcc("Vaz","059020189406",0));
         accounts.add(1,new BankAcc("Lochi","059020189409",25));
+        accounts.add(2,new GoldAccount("Gold1","059020189412",10000));
+
+        
 
 //dont use index method as we need to keep track of indexes as well
 //instead use trverse methods like a search
