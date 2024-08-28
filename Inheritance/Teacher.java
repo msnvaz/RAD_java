@@ -5,4 +5,10 @@ public class Teacher extends person{
         super(nameIn, addressIn, PNIn);
         this.teacherId=TeacherIdIn;
     }
+
+    //overrride a method in person class from the teacher class
+    @Override
+    public void introduce(){
+        System.out.println("Hello my name is "+getName()+ " Im a teacher");
+    }
 }

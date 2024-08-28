@@ -14,4 +14,15 @@ public class student extends person{
         super(nameIn, addressIn, PNIn);
         this.StudentId=StdIdIn;
     }
+
+    //can call parent methods by super keyword and also parent name
+    public void printAddress(){
+        System.out.println("super.(getAddress)");
+    }
+
+    //override a method in the parent class from children class
+    @Override
+    public void introduce(){
+        System.out.println("Heelo my name is "+getName()+" Im a student");
+    }
 }

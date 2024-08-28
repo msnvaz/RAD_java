@@ -5,14 +5,20 @@
 
 public class Main {
     public static void main(String[] args) {
+
+        person Sandeep= new person("Sandeep","Mora","45645");
+        Sandeep.introduce();
+
         Teacher sam = new Teacher("Sama","CMB","0987","tea/01");
         //sam.setName("Samantha Mathara");
         sam.introduce();
 
         student john = new student("John","Mora","876554","stu/01");
+
         //john.setName("John Cena");
         john.introduce();
         System.out.println(john.getAddress());
+
         //u can change the value of a contructed object by a setter
         john.setAddress("Colombo");
         System.out.println(john.getAddress());
