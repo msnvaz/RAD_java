@@ -1,11 +1,21 @@
-public class person{
+public abstract class person{
+    //when u make a class abstract we cannot use that class to directly create objects
+    //but we can inherit their properties
+
+    //if a method is abstract 
+    //then we need to override those methods in children classes
+
     private  String name;
     private String address;
     private String phoneNumber;
 
-    public void introduce(){
+   /* public void abstract introduce(){
         System.out.println("Hello my name is "+name);
-    }
+    }*/
+
+ // we need to implement definetly in children classes
+ 
+    public abstract void introduce();
 
     //getter and setter for private
 

@@ -1,4 +1,7 @@
-public class Teacher extends person{
+public final class Teacher extends person{
+    //final keyword makes sure that Teacher class is no more extended
+    //no other class can inherit teacher class properties
+    
     public String teacherId;
 
     public Teacher(String nameIn,String addressIn,String PNIn,String TeacherIdIn){

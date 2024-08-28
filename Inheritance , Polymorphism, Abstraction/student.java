@@ -23,6 +23,6 @@ public class student extends person{
     //override a method in the parent class from children class
     @Override
     public void introduce(){
-        System.out.println("Heelo my name is "+getName()+" Im a student");
+        System.out.println("Hello my name is "+getName()+" Im a student");
     }
 }
