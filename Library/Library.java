@@ -1,13 +1,11 @@
+import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.ArrayList;
 
 public class Library {
 
     public static ArrayList<Book> booklist = new ArrayList<Book>();
     public static ArrayList<Member> memberList = new ArrayList<Member>();
-    
-    public static
-
-    
+       
     public static int searchMember(String MemberIdIn){
         for(int i = 0; i < memberList.size(); i++){
             if(memberList.get(i).getMemberName().equals(MemberIdIn)){
@@ -35,7 +33,7 @@ public class Library {
     }
         
 
-    public static boolean addMember(){ 
+    public static boolean addMember(String MemberIdIn, String MemberNameIn){ 
         Member member = new Member(MemberIdIn, MemberNameIn);
         memberList.add(member);
         return true;

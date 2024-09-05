@@ -5,8 +5,7 @@ public class Book {
     String Author;
     boolean isAvailable;
     int borrowedDate;
-    int returnDate=borrowedDate+7;
-
+    
     public Book(String BookIdIn, String TitleIn, String AuthorIn){
         this.BookId = BookIdIn;
         this.Title = TitleIn;

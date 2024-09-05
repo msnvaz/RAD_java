@@ -2,9 +2,13 @@
 import java.lang.classfile.instruction.ThrowInstruction;
 
 public class LibraryApplication {
+
+    static int Today=20;
+
     public static void main(String[] args) {
         Library library = new Library();
         int choice=0;
+        
         
         do{
         System.out.println("Welcome to the Library System");
@@ -18,9 +22,9 @@ public class LibraryApplication {
         System.out.println("8. Display all Members");
         System.out.println("9. Borrow a book");
         System.out.println("10. Return a book");
-        System.out.println("11. Display all borrowed books");
-        System.out.println("12. Display all available books");
-        System.out.println("13. Display all overdue books");
+        System.out.println("11. View Lending information");
+        System.out.println("12. Display Overdue Books");
+        System.out.println("13. Fine Calculation");
         System.out.println("14. Exit");
         System.out.println();
         System.out.println("Enter your choice: ");
@@ -64,19 +68,19 @@ public class LibraryApplication {
                  break;
 
                  case 10:
-                 option5(library);
+                 option10(library);
                  break;
 
                  case 11:
-                 option5(library);
+                 option11(library);
                  break;
 
                  case 12:
-                    option5(library);
+                    option12(library);
                     break;
 
                 case 13:
-                 option5(library);
+                 option13(library);
                  break;
 
                 case 14:
@@ -114,11 +118,11 @@ public class LibraryApplication {
 
         System.out.println();
         System.out.println("Enter Member ID: ");
-        String BookIdIn = EasyScanner.nextString();
+        String MemberIdIn = EasyScanner.nextString();
         System.out.println("Enter Name: ");
-        String TitleIn = EasyScanner.nextString();
+        String MemberNameIn = EasyScanner.nextString();
         
-        Member member = new Member(BookIdIn, TitleIn);
+        Member member = new Member(MemberIdIn, MemberNameIn);
         
         if(libraryIn.memberList.add(member)){
             System.out.println("Member added");
@@ -224,7 +228,7 @@ public class LibraryApplication {
     static void option12(Library LibraryIn){
         for(int i = 0; i < LibraryIn.booklist.size(); i++){
             if(LibraryIn.booklist.get(i).isAvailable == false){
-                if(LibraryIn.booklist.get(i).borrowedDate + 7 < 2021){
+                if(LibraryIn.booklist.get(i).borrowedDate + 7 < Today){
                     System.out.println("Book ID: " + LibraryIn.booklist.get(i).BookId);
                     System.out.println("Title: " + LibraryIn.booklist.get(i).Title);
                     System.out.println("Lended by: " + LibraryIn.memberList.get(i).getMemberName());
@@ -238,14 +242,26 @@ public class LibraryApplication {
 
     //fineCalculation(library);
     static void option13(Library LibraryIn){
+        int fine;
+
         for(int i = 0; i < LibraryIn.booklist.size(); i++){
             if(LibraryIn.booklist.get(i).isAvailable == false){
-                if(LibraryIn.booklist.get(i).borrowedDate + 7 > LibraryIn.booklist.get(i).returnDate){
+                if(LibraryIn.booklist.get(i).borrowedDate + 7 < Today){
                     System.out.println("Book ID: " + LibraryIn.booklist.get(i).BookId);
                     System.out.println("Title: " + LibraryIn.booklist.get(i).Title);
                     System.out.println("Lended by: " + LibraryIn.memberList.get(i).getMemberName());
                     System.out.println("Borrowed Date: " + LibraryIn.booklist.get(i).borrowedDate);
-                    System.out.println("Fine: " + (2021 - (LibraryIn.booklist.get(i).borrowedDate + 7)) * 10);
+                    System.out.println("Return Date: " + (LibraryIn.booklist.get(i).borrowedDate+7));
+
+                    if(LibraryIn.booklist.get(i).borrowedDate + 14 <= Today){
+                        fine = (Today-(LibraryIn.booklist.get(i).borrowedDate))*50;
+                    }else{
+                        fine = 350 + (Today-(LibraryIn.booklist.get(i).borrowedDate-7))*100;
+                    }
+
+                    System.out.println("Fine for book: " + LibraryIn.booklist.get(i).BookId);
+                    System.out.println("Fine for member: " + LibraryIn.memberList.get(i).getMemberId());
+                    System.out.println("Fine: " + fine);
                     System.out.println();
                 }
             }
