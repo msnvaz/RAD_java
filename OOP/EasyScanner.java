@@ -30,5 +30,12 @@ public class EasyScanner
         char c = keyboard.next().charAt(0);
         return c;
     }
+
+    public static boolean nextBoolean()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        boolean b = keyboard.nextBoolean();
+        return b;
+    }
 }
 
